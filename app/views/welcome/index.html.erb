@@ -78,7 +78,11 @@
     <div class="col-xl-12">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-
+            <% @slideshow_images_names.each_with_index do |image_name, image_index| %>          
+                    <div class="carousel-item <%= "active " if image_index==0 %>">
+                        <%= image_tag(image_name, class: 'd-block w-100') %>
+                    </div>
+            <% end %>
         </div>
 
             <a class="carousel-control left carousel-control-prev" href="#carouselExampleControls" data-slide="prev">
