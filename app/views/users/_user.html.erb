@@ -1,0 +1,33 @@
+<div class="container">
+<% @user.each do |user| %>
+	<div class="row justify-content-md-center">
+		<div class="col-8 mt-4">
+			<div class="card text-center shadow mb-5 bg-white rounded">
+				<div class="card-header font-italic">
+					<%= user.email %>
+					<% if user.admin? %>
+						<span>(Administrator)</span>
+					<% end %>
+				</div>
+				<div class="card-body">
+                    <h5 class="card-title">
+						<%="List of appointments" unless user.admin?%>
+                    <h5>
+                    <p class= "card-text">
+                    <% user.meetings.each do |meeting| %>
+                        <div>
+                            <%= link_to meeting.name, meeting, class: "text-decoration-none text-md text-orange"%>
+                        </div>
+                    <% end %>
+                    </p>
+                    <%= link_to "Delete user", admin_destroy_user_path(user), class: "btn btn-outline-danger mt-3", method: :delete,
+					data: {confirm: "Are you sure you want to delete the user account"} %>
+				</div>
+				<div class="card-footer text-muted">
+					<small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
+</div>

@@ -1,2 +1,202 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+
+<div class="jumbotron jumbotron-fluid d-flex flex-column justify-content-center align-items-center">
+    <div class="container text-center ">
+        <div class="row">
+            <div class="col-md-10 col-center m-auto">
+                <h1>We are here to make your dream home a reality</h1>
+                <% if user_signed_in? %>
+                    <%= link_to "Schedule Appointment", new_meeting_path, class: "btn btn-primary px-3 text-md" %>
+                <% else %>
+                    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary px-3 text-md" %>
+                <% end %>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<section id="about" class="about">
+<div class="container text-center">
+    <h2>About Us</h2>
+    <div class="row mb-3">
+        <div class="col-lg-5">
+            <%= image_tag "family.jpg", class: "img-fluid img-thumbnail shadow" %>
+            </div>
+            <div class="col-lg-7">
+            <p class="mission p-5">Welcome to Kapourani Construction, <br /> a full service painting company, working in the DuPage County.
+                Our professional painters have the resources, qualifications, and experience necessary to meet all of your residential and commercial painting needs. With over 15 years experience as professional painters, we are one of the largest Residential, Commercial, and Institutional painting companies in Illinois. Our services include exterior and interior painting, and power washing needs. 
+            We have the finest repeat and referral rates in the industry, which speaks to our trusted and loyal customer following.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="services" class="services">
+    <div class="container text-center pt-2">
+        <h2>Our Services</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow mb-5">
+                <%= image_tag "interior_services.jpg", class: "card-img-top" %>
+                <div class="card-header text-md">
+                    Interior Design
+                </div>
+                <div class="card-body">
+                    <p class="card-text pt-2">Kitchen, Bathroom, & Basement</p>
+                    <p class="card-text">Cabinet & Appliance Installation</p>
+                    <p class="card-text">Counter Tops & Tiling</p>
+                    <p class="card-text">Flooring (tile, stone, hardwood, granite & marble)</p>
+                    <p class="card-text">Drywall & Painting</p>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="card shadow mb-5">
+                <%= image_tag "exterior_services.jpg", class: "card-img-top" %>
+                <div class="card-header text-md">
+                    Exterior Design
+                </div>
+                <div class="card-body">
+                    <p class="card-text pt-2">Pressure Wash</p>
+                    <p class="card-text">Doors & Windows Installation</p>
+                    <p class="card-text">Trim Deck</p>
+                    <p class="card-text">Stain & Fence</p>
+                    <p class="card-text">Gutters</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="projects pb-5" id="projects">
+<div class="container text-center pt-2">
+<h2>Our Projects</h2>
+<div class="row justify-content-center">
+    <div class="col-xl-12">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <% @slideshow_images_names.each_with_index do |image_name, image_index| %>          
+                    <div class="carousel-item <%= "active " if image_index==0 %>">
+                        <%= image_tag(image_name, class: 'd-block w-100') %>
+                    </div>
+            <% end %>
+        </div>
+
+            <a class="carousel-control left carousel-control-prev" href="#carouselExampleControls" data-slide="prev">
+            <i class="fa fa-angle-left" id="arrow"></i>
+            </a>
+            <a class="carousel-control right carousel-control-next" href="#carouselExampleControls" data-slide="next">
+            <i class="fa fa-angle-right" id="arrow"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+<section id="testimonial-section" class="testimonial-section">
+<div class="container text-center">
+<div class="row">
+    <div class="col-md-10 col-center m-auto">
+        <h2>Testimonials</h2>
+        
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Carousel -->
+            <div class="carousel-inner">
+                <div class="item carousel-item active">
+                    <p class="testimonial">We had our walls, baseboards, door frames, window and stair risers completed. 
+                    When they gave the quote, they went over every detail and helped us understand the project so we could make the best decisions. The detail of the work is phenomenal, every part is perfect and this was a very difficult, detailed job. Afron and his crew had great communication throughout the job and were so kind, 
+                    even our appliance tech commented on how kind they were! We will hire them for our next job.</p>
+                    <p class="overview"><b>Anna V. </b> Darien, IL</p>
+                </div>
+                <div class="item carousel-item">
+                    <p class="testimonial">Afron and Andy were very professional and hardworking.
+                        Definitely a pleasure to work with. Aside from painting and repairing drywall, they replaced part of my vinyl floor. They will do all types of repair / renovation work with the exception of electrical and plumbing.
+                            I already have another job lined up for them.</p>
+                    <p class="overview"><b>Helen G.</b> Wheaton, IL</p>
+                </div>
+                <div class="item carousel-item">
+                    <p class="testimonial">Afron, Taso and his team are the best painter someone can hire, 
+                    their professional skills, attention to details and above all, 
+                    their willingness to go the extra mile to accommodate the clients needs or wants.
+                        Absolutely a 5 star ratings.</p>
+                    <p class="overview"><b>Nella B.</b> Hinsdale, IL</p>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-angle-left" id="arrow"></i>
+            </a>
+            <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                <i class="fa fa-angle-right" id="arrow"></i>
+                
+            </a>
+        </div>
+        
+    </div>
+</div>  
+</div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <div class="container text-center text-md-left mt-5">
+        <div class="row mt-3">
+
+            <div class="col-md-5 col-lg-6 col-xl-5 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">Kapourani Construction</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Welcome to Kapourani Construction,
+                a full service painting company, working in the DuPage County.</p>
+
+            </div>
+
+            <div class="col-md-6 col-lg-7 col-xl-5 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <i class="fas fa-home mr-3"></i> Wheaton, IL 60187, US</p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                <p>
+                    <i class="fas fa-phone mr-3"></i> + 1 (630) 479 4954</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <hr>
+
+    <ul class="list-unstyled list-inline text-center py-2">
+    <% if user_signed_in? %>
+    <li class="list-inline-item">
+        <h5 class="mb-1">Schedule free estimation</h5>
+    </li>
+    <li class="list-inline-item">
+    <%= link_to "Schedule Appointment", new_meeting_path, class: "btn btn-primary px-3 text-md" %>
+    </li>
+    <% else %>
+    <li class="list-inline-item">
+        <h5 class="mb-1">Register for free</h5>
+        </li>
+    <li class="list-inline-item">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary px-3 text-md" %>
+    </li>
+    <% end %>
+    </ul>
+
+    <hr>
+
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://kapourani-construction.herokuapp.com/"> Kapourani-Construction.com</a>
+    </div>
+
+</footer>

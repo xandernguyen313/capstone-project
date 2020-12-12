@@ -1,0 +1,266 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+$grey-darkest: #3d4852;
+$grey-darker: #606f7b;
+$grey-dark: #8795a1;
+$grey: #b8c2cc;
+$grey-light: #dae1e7;
+$grey-lighter: #f1f5f8;
+$grey-lightest: #f8fafc;
+
+* {
+    font-family: "Helvetica";
+}
+.nav-link {
+    font-size: 0.875rem; 
+    font-weight: 700;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+.text-md {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+.mission {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+.heading {
+    font-size: 2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.text-orange {
+    color:  #db584e;
+
+}
+
+.text-grey-darker {
+    color: $grey-darker;
+
+}
+.text-grey-darkest {
+    color: $grey-darkest;
+
+}
+.btn {
+    @extend .text-sm;
+}
+.btn-custom {
+    color: $grey-darker;
+    border: 1px solid $grey-light;
+}
+
+.btn-custom2 {
+    color: #fff;
+    border: 1px solid #db584e;
+    background-color: #db584e;
+}
+
+.calendar-title{
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+/* FORM Section */
+
+.select {
+    appearance: none;
+    @extend .rounded, .py-1;
+    line-height: 1.25;
+    border:1px solid $grey;
+    color: $grey-darker;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    display: inline;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+}
+
+.select:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+
+h2{
+	position:relative;
+	margin: 30px 0 60px;
+}
+h2::after{
+	content: "";
+	width: 140px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background-color: #db584e;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	opacity: 0.8;
+	
+}
+
+
+/*--------------------------------------------------------------
+# About Us Section
+--------------------------------------------------------------*/
+.about p {
+	padding: 20px 40px;
+	
+}
+
+/*--------------------------------------------------------------
+# Our Services Section
+--------------------------------------------------------------*/
+.services {
+    background: $grey;
+}
+
+.services .card-header {
+    background-color: #db584e;
+    color: white;
+    position:absolute;
+    left: 15%;
+    width: 70%;
+    margin: 0;
+    bottom: 210px;
+    border-radius: 40px;
+    font-size: 1.35rem;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonial-section{
+	background: #262626;
+}
+.testimonial-section h2{
+	color: #ffffff;
+}
+
+.col-center {
+	margin: 0 auto;
+	float: none !important;
+}
+.testimonial-section .carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.testimonial-section .carousel-item {
+	color: #fff;
+	font-size: 18px;
+    text-align: center;
+	overflow: hidden;
+    min-height: 290px;
+}
+
+.testimonial-section .carousel .testimonial {
+	padding: 30px 0 10px;
+}
+.testimonial-section .carousel .overview {	
+	font-style: italic;
+}
+.testimonial-section .carousel .overview b {
+	text-transform: uppercase;
+	color: #db584e;
+}
+.testimonial-section .carousel .carousel-control {
+	width: 40px;
+    height: 40px;
+    margin-top: -70px;
+    top: 50%;
+	background: none;
+}
+#arrow {
+    font-size: 3rem;
+	line-height: 42px;
+    position: absolute;
+    display: inline-block;
+	color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+}
+.testimonial-section .carousel .carousel-indicators {
+	bottom: -40px;
+}
+.testimonial-section .carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 1px 3px;
+	border-radius: 50%;
+}
+.testimonial-section .carousel-indicators li {	
+	background: #999;
+	border-color: transparent;
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+.testimonial-section .carousel-indicators li.active {	
+	background: #555;		
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+
+/*--------------------------------------------------------------
+# Jumbotron section
+--------------------------------------------------------------*/
+
+
+.jumbotron {
+	background: image-url('jumbotron.jpg');
+	height: 80vh;
+	background-size: cover;
+	background-position: center;
+
+}
+.jumbotron h1{
+	font-size: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 70px;
+	color: #ffffff;
+	text-shadow: 0 2px 0 black;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #db584e;
+    border-color: #db584e;
+}
+
+
+.container h1{
+	padding-bottom: 20px;
+	
+}
+
+.container h3{
+	padding-bottom: 20px;
+	text-shadow: 0 2px 0 black;
+}
+
+/*--------------------------------------------------------------
+# Projects section
+--------------------------------------------------------------*/
+
+.projects {
+    #arrow {
+        font-size: 4rem;
+        color: black;
+    }
+}

@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+<div class="col-8 border shadow rounded p-5 m-4">
+
+  <%= form_with(model: meeting, local: true) do |form| %>
+    <% if meeting.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+        <ul>
+          <% meeting.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <h5 class="mb-4 text-orange" style="font-weight:600;">Appointment Information</h3>
+    <div class="field form-group">
+      <%= form.label :name, "Name"%>
+      <%= form.text_field :name, class: "form-control", placeholder: "Enter your name*" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :address, "Address"%>
+      <%= form.text_field :address, class: "form-control", placeholder: "Enter your address*"  %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :phone, "Phone Number"%>
+      <%= form.text_field :phone, class: "form-control", placeholder: "Enter your phone number*"  %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :start_time, "Appointment Time", class: "d-block"%>
+      <%= form.datetime_select :start_time, {start_day: Date.today, start_year: Date.today.year, minute_step: 15},{ class: "select px-4" }%>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :description, "Description"%>
+      <%= form.text_area :description, class: "form-control", placeholder: "Tell us more*" %>
+    </div>
+
+    <hr>
+
+    <div class="actions">
+      <%= form.submit class:"btn btn-custom2 px-3 py-2" %>
+    </div>
+
+
+  <% end %>
+
+</div>
+</div>

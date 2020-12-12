@@ -1,0 +1,8 @@
+
+  <div class="row d-flex justify-content-center">
+      <% if current_user.meetings.any? || current_user.admin? %>
+        <%= render 'meetings_landing', meetings: @meetings %>
+      <% else %>
+        <%= render 'meetings_cta' %>
+      <% end %>
+  </div>
